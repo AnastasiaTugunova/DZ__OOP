@@ -27,7 +27,7 @@ class Student:
         courses_in_progress_unpacked = ', '.join(self.courses_in_progress)
 
         res = f'Имя: {self.name} \nФамилия: {self.surname} ' \
-               f'\nСредняя оценка за домашние задания: {self.average_rating}' \
+               f'\nСредняя оценка за домашние задания: {round(self.average_rating, 1)}' \
                f'\nКурсы в процессе изучения: {finished_courses_unpacked} ' \
                f'\nЗавершенные курсы: {courses_in_progress_unpacked}'
         return res
@@ -61,7 +61,7 @@ class Lecturer(Mentor):
 
         res = f'Имя: {self.name} ' \
                f'\nФамилия: {self.surname} ' \
-               f'\nСредняя оценка за лекции: {self.average_rating}'
+               f'\nСредняя оценка за лекции: {round(self.average_rating, 1)}'
         return res
 
     def __lt__(self, other):
@@ -217,4 +217,3 @@ print(f'Общая средняя оценка по курсу Python среди
 print()
 print(f'Общая средняя оценка по курсу Java среди лекторов: {total_count_lector(lector_list, "Java")}')
 
-s
